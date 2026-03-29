@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: rgba(14, 165, 233, 0.18);
+    color: #0f172a;
+  }
+}
+
+@layer components {
+  .toc-link {
+    display: block;
+    border-radius: 1rem;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    color: rgb(203 213 225);
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .toc-link:hover {
+    transform: translateX(2px);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  .toc-link[data-active="true"] {
+    background: rgba(56, 189, 248, 0.16);
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.24);
+  }
+
+  .toc-link[data-level="3"] {
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .section-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(186, 230, 253, 0.7);
+    background: rgba(255, 255, 255, 0.72);
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgb(14 116 144);
+    backdrop-filter: blur(10px);
+    transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+  }
+
+  .section-chip:hover {
+    transform: translateY(-1px);
+    border-color: rgba(14, 165, 233, 0.9);
+    background: white;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "google-business-line-oa-store-owner-sop",
+  "private": true,
+  "scripts": {
+    "build:site": "node scripts/build-site.mjs",
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/site.css --minify",
+    "build": "npm run build:site && npm run build:css"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
